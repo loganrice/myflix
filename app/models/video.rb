@@ -14,7 +14,7 @@ class Video < ActiveRecord::Base
 
   def rating
     if self.reviews.count == 0
-      0
+      nil
     else
       self.reviews.collect(&:rating).sum.to_f / self.reviews.count
     end
