@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       if charge.successful?
         @user.save
         handle_invitation
-        AppMailer.welcome(@user).deliver
+        AppMailer.delay.welcome(@user)
         flash[:success] = "Thank you for signing up!"
         redirect_to sign_in_path
       else
