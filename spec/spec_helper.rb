@@ -40,10 +40,13 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :truncation
   end
   
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
+  # config.around(:each) do |example|
+  #   DatabaseCleaner.cleaning do
+  #     example.run
+  #   end
+  # end
+  config.around(:each) do |vcr|
+    allow_http_connections_when_no_cassette = true
   end
 
   
