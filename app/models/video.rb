@@ -9,7 +9,7 @@ class Video < ActiveRecord::Base
   
   def self.search_by_title(key_word)
     return [] if key_word.blank?
-    where("title LIKE ?", "%#{key_word}%").order("created_at DESC")
+    self.where("title LIKE ?", "%#{key_word}%").order("created_at DESC")
   end
 
   def rating

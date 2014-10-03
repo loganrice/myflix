@@ -33,7 +33,7 @@ describe UsersController do
     end
     context "failed user sign up" do 
       it "renders the new template" do 
-        result = double(:sign_ub_result, successful?: false)
+        result = double(:sign_up_result, successful?: false, error_message: "This is an error")
         UserSignup.any_instance.should_receive(:sign_up).and_return(result)
         post :create, user: Fabricate.attributes_for(:user), stripeToken: '1234'
         response.should render_template :new

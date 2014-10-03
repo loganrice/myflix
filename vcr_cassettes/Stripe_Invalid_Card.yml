@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 01 Oct 2014 16:55:51 GMT
+      - Thu, 02 Oct 2014 21:07:56 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -44,6 +44,8 @@ http_interactions:
       - '300'
       Cache-Control:
       - no-cache, no-store
+      Request-Id:
+      - 384e5fef-558a-489f-9e49-1717a66d113f
       Stripe-Version:
       - '2014-09-08'
       Strict-Transport-Security:
@@ -52,14 +54,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_14iqOJHTQGbBut9EMpt85VWj",
+          "id": "tok_14jGnoHTQGbBut9EqxwTtrss",
           "livemode": false,
-          "created": 1412182551,
+          "created": 1412284076,
           "used": false,
           "object": "token",
           "type": "card",
           "card": {
-            "id": "card_14iqOJHTQGbBut9Er60MuhtX",
+            "id": "card_14jGnoHTQGbBut9EJPzDj23f",
             "object": "card",
             "last4": "0002",
             "brand": "Visa",
@@ -79,13 +81,13 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Wed, 01 Oct 2014 16:55:51 GMT
+  recorded_at: Thu, 02 Oct 2014 21:07:56 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=300&currency=usd&card=tok_14iqOJHTQGbBut9EMpt85VWj
+      string: amount=300&currency=usd&card=tok_14jGnoHTQGbBut9EqxwTtrss
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -111,7 +113,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 01 Oct 2014 16:55:52 GMT
+      - Thu, 02 Oct 2014 21:07:56 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -124,6 +126,8 @@ http_interactions:
       - '300'
       Cache-Control:
       - no-cache, no-store
+      Request-Id:
+      - 689a7ca3-ba75-4909-8a99-82ce9f9389b9
       Stripe-Version:
       - '2014-09-08'
       Strict-Transport-Security:
@@ -136,9 +140,9 @@ http_interactions:
             "message": "Your card was declined.",
             "type": "card_error",
             "code": "card_declined",
-            "charge": "ch_14iqOKHTQGbBut9E2qpJ0WhU"
+            "charge": "ch_14jGnoHTQGbBut9EhjP78DeC"
           }
         }
     http_version: 
-  recorded_at: Wed, 01 Oct 2014 16:55:52 GMT
+  recorded_at: Thu, 02 Oct 2014 21:07:56 GMT
 recorded_with: VCR 2.9.3
