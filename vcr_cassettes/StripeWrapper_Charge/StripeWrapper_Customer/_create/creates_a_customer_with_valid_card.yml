@@ -1,0 +1,148 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/tokens
+    body:
+      encoding: US-ASCII
+      string: card[number]=4242424242424242&card[exp_month]=3&card[exp_year]=2015&card[cvc]=123
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.15.0
+      Authorization:
+      - Bearer sk_test_7uQjdF9CTlCrkPOwzCRSghPJ
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.15.0","lang":"ruby","lang_version":"2.1.1 p76 (2014-02-24)","platform":"x86_64-darwin12.0","publisher":"stripe","uname":"Darwin
+        Rice-Machine.local 13.4.0 Darwin Kernel Version 13.4.0: Sun Aug 17 19:50:11
+        PDT 2014; root:xnu-2422.115.4~1/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '81'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 21 Nov 2014 19:23:08 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '623'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - e5cd4334-e58c-4103-82e9-7445c4f6d4b3
+      Stripe-Version:
+      - '2014-09-08'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "tok_151MzoHTQGbBut9EhiEkxoD1",
+          "livemode": false,
+          "created": 1416597788,
+          "used": false,
+          "object": "token",
+          "type": "card",
+          "card": {
+            "id": "card_151MzoHTQGbBut9EHOn9l8XA",
+            "object": "card",
+            "last4": "4242",
+            "brand": "Visa",
+            "funding": "credit",
+            "exp_month": 3,
+            "exp_year": 2015,
+            "fingerprint": "KyRAo5ENVNQjHnp1",
+            "country": "US",
+            "name": null,
+            "address_line1": null,
+            "address_line2": null,
+            "address_city": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_country": null,
+            "dynamic_last4": null,
+            "customer": null
+          }
+        }
+    http_version: 
+  recorded_at: Fri, 21 Nov 2014 19:23:08 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: US-ASCII
+      string: card=tok_151MzoHTQGbBut9EhiEkxoD1&plan=base&email=ebba_gerhold%40lebsack.org
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.15.0
+      Authorization:
+      - Bearer sk_test_7uQjdF9CTlCrkPOwzCRSghPJ
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.15.0","lang":"ruby","lang_version":"2.1.1 p76 (2014-02-24)","platform":"x86_64-darwin12.0","publisher":"stripe","uname":"Darwin
+        Rice-Machine.local 13.4.0 Darwin Kernel Version 13.4.0: Sun Aug 17 19:50:11
+        PDT 2014; root:xnu-2422.115.4~1/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '76'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 21 Nov 2014 19:23:08 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '165'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - 7459ebc1-8fbf-4597-a8f8-3e6fecf3766a
+      Stripe-Version:
+      - '2014-09-08'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "error": {
+            "type": "invalid_request_error",
+            "message": "No such plan: base; one exists with a name of base, but its ID is 1.",
+            "param": "plan"
+          }
+        }
+    http_version: 
+  recorded_at: Fri, 21 Nov 2014 19:23:08 GMT
+recorded_with: VCR 2.9.3
